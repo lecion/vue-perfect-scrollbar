@@ -13,11 +13,6 @@ module.exports = Object.assign({
   performance: {
     hints: false
   },
-  resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.common.js'
-    }
-  },
   devtool: '#source-map',
   plugins: [
     new webpack.DefinePlugin({

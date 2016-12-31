@@ -2,7 +2,7 @@
   "name": "vue-perfect-scrollbar",
   "version": "0.0.1",
   "description": "",
-  "main": "index.vue",
+  "main": "dist/index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build-webpack.conf.js",
     "example": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot --config example-webpack.conf.js"
@@ -12,7 +12,7 @@
     "url": "git+https://github.com:Degfy/vue-perfect-scrollbar.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
   },
   "devDependencies": {

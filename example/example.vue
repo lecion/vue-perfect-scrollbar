@@ -1,16 +1,12 @@
 <template>
   <div id="app">
-    <VuePerfectScrollbar class="scroll-area">
+    <VuePerfectScrollbar class="scroll-area" v-once :settings="settings" @ps-scroll-y="scrollHanle">
       <img src="./assets/azusa.jpg" height="720" width="1280" alt="">
     </VuePerfectScrollbar>
   </div>
 </template>
 <script>
-
-
 import VuePerfectScrollbar from '../dist'
-
-console.log(VuePerfectScrollbar)
 
 export default {
   components: {
@@ -19,10 +15,18 @@ export default {
   name: 'app',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      settings: {
+        maxScrollbarLength: 60
+      }
+    }
+  },
+  methods: {
+    scrollHanle(evt) {
+      console.log(evt)
     }
   }
 }
+
 </script>
 <style lang="scss">
 .scroll-area {

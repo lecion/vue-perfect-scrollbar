@@ -1,0 +1,62 @@
+#vue-perfect-scrollbar: [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) vue version
+## 1.install
+```shell
+npm install vue-perfect-scrollbar
+```
+
+## 2. example
+```html
+<template>
+  <VuePerfectScrollbar class="scroll-area" v-once :settings="settings" @ps-scroll-y="scrollHanle">
+    <img src="./assets/azusa.jpg" height="720" width="1280" alt="">
+  </VuePerfectScrollbar>
+</template>
+
+<script>
+import VuePerfectScrollbar from 'vue-perfect-scrollbar'
+
+export default {
+  components: {
+    VuePerfectScrollbar
+  },
+  name: 'app',
+  data() {
+    return {
+      settings: {
+        maxScrollbarLength: 60
+      }
+    }
+  },
+  methods: {
+    scrollHanle(evt) {
+      console.log(evt)
+    }
+  }
+}
+
+</script>
+<style lang="scss">
+.scroll-area {
+  position: relative;
+  margin: auto;
+  width: 400px;
+  height: 300px;
+}
+</style>
+```
+## 3. props
+settings:please refer to [optional-parameters of perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar#optional-parameters)
+
+## 4. events
+please refer to [events of perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar#events)
+
+
+## License
+
+The MIT License (MIT) Copyright (c) 2016 Hyunje Alex Jun and other contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
