@@ -1,6 +1,6 @@
 {
   "name": "vue-perfect-scrollbar",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -13,8 +13,7 @@
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "perfect-scrollbar": "^0.6.15",
     "babel-core": "^6.0.0",
