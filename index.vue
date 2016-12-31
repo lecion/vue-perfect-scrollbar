@@ -1,5 +1,5 @@
 <template>
-  <section class="ps-scoller">
+  <section ref="container">
     <slot></slot>
   </section>
 </template>
@@ -7,18 +7,29 @@
 @import '~perfect-scrollbar/src/css/main.scss';
 </style>
 <script>
-import PsScroll from 'perfect-scrollbar'
+import scrollBar from 'perfect-scrollbar'
+export default {
+  props: {
+    settings: {
+      default: undefined
+    }
+  },
+  mounted() {
+    let container = this.$refs.container
+    this.width = container.offsetWidth
+    this.height = container.offsetHeight
+    scrollBar.initialize(container, this.settings)
+  },
+  beforeDestroy() {
+    scrollBar.destroy(this.$refs.container)
+  },
+  updated() {
+    let width = container.offsetWidth,
+      height = container.offsetHeight
 
-function vuePScroller(settings) {
-  return {
-    methods: {},
-    mounted() {
-      PsScroll.initialize(this.$el, settings)
-    },
-    beforeDestroy() {
-      PsScroll.destroy(this.$el)
+    if (width != this.width || height != this.width) {
+      scrollBar.update(this.$refs.container)
     }
   }
 }
-export default vuePScroller
 </script>
