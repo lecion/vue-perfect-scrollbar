@@ -43,7 +43,17 @@ export default {
   height: 300px;
 }
 </style>
+
 ```
+Also,you can clone this repository to run the example:
+
+```shell
+git clone git@github.com:Degfy/vue-perfect-scrollbar.git
+cd vue-perfect-scrollbar
+npm install
+npm run example
+```
+
 ## 3. props
 settings:please refer to [optional-parameters of perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar#optional-parameters)
 
