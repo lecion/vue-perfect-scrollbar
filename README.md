@@ -1,10 +1,13 @@
-#vue-perfect-scrollbar: [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) vue version
+# vue-perfect-scrollbar: [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) vue version
+
 ## 1.install
+
 ```shell
 npm install vue-perfect-scrollbar
 ```
 
 ## 2. example
+
 ```html
 <template>
   <VuePerfectScrollbar class="scroll-area" v-once :settings="settings" @ps-scroll-y="scrollHanle">
@@ -55,9 +58,11 @@ npm run example
 ```
 
 ## 3. props
+
 settings:please refer to [optional-parameters of perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar#optional-parameters)
 
 ## 4. events
+
 please refer to [events of perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar#events)
 
 
