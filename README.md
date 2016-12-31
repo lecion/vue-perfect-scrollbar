@@ -1,8 +1,10 @@
-# vue-perfect-scrollbar: [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) vue version
+# `vue-perfect-scrollbar`
+
+[perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) vue version
 
 ## 1.install
 
-```shell
+```
 npm install vue-perfect-scrollbar
 ```
 
