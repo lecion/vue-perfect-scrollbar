@@ -1,6 +1,6 @@
 {
   "name": "vue-perfect-scrollbar",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -14,10 +14,21 @@
   "author": "",
   "license": "MIT",
   "dependencies": {},
-    "files": [
+  "files": [
     "dist",
     "index.js",
     "index.vue"
+  ],
+  "keywords": [
+    "scroll",
+    "scrollbar",
+    "perfect-scroll",
+    "vue-perfect-scroll",
+    "vue-scroll",
+    "vue-scrollbar",
+    "vue-plugin",
+    "frontend",
+    "滚动条"
   ],
   "devDependencies": {
     "perfect-scrollbar": "^0.6.15",

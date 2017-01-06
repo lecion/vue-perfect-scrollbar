@@ -67,6 +67,24 @@ settings:please refer to [optional-parameters of perfect-scrollbar](https://gith
 
 please refer to [events of perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar#events)
 
+## 5. use vue and webpack
+you can do it like this:
+
+### install
+```shell
+npm install vue-perfect-scrollbar perfect-scrollbar --save
+```
+
+### use
+```js
+import VuePerfectScrollbar from 'vue-perfect-scrollbar/index.vue'
+export default {
+  components: {
+    VuePerfectScrollbar
+  },
+  //...
+}
+```
 
 ## License
 

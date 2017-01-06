@@ -40,11 +40,12 @@ export default {
     scrollBar.destroy(this.$refs.container)
   },
   updated() {
-    let width = container.offsetWidth,
+    let container = this.$refs.container,
+      width = container.offsetWidth,
       height = container.offsetHeight
 
     if (width != this.width || height != this.width) {
-      scrollBar.update(this.$refs.container)
+      scrollBar.update(container)
     }
   }
 }
