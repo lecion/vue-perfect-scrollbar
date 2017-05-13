@@ -28,7 +28,10 @@ export default {
   methods: {
     scrollHanle(evt) {
       this.$emit(evt.type, evt)
-    }
+    },update(){
+        let container = this.$refs.container;
+        scrollBar.update(container)
+      }
   },
   mounted() {
     let container = this.$refs.container
