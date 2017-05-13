@@ -1,15 +1,5 @@
 <template>
-  <section ref="container" 
-    @ps-scroll-y="scrollHanle"
-    @ps-scroll-x="scrollHanle"
-    @ps-scroll-up="scrollHanle"
-    @ps-scroll-down="scrollHanle"
-    @ps-scroll-left="scrollHanle"
-    @ps-scroll-right="scrollHanle"
-    @ps-y-reach-start="scrollHanle"
-    @ps-y-reach-end="scrollHanle"
-    @ps-x-reach-start="scrollHanle"
-    @ps-x-reach-end="scrollHanle">
+  <section ref="container" @ps-scroll-y="scrollHanle" @ps-scroll-x="scrollHanle" @ps-scroll-up="scrollHanle" @ps-scroll-down="scrollHanle" @ps-scroll-left="scrollHanle" @ps-scroll-right="scrollHanle" @ps-y-reach-start="scrollHanle" @ps-y-reach-end="scrollHanle" @ps-x-reach-start="scrollHanle" @ps-x-reach-end="scrollHanle">
     <slot></slot>
   </section>
 </template>
@@ -18,20 +8,21 @@
 </style>
 <script>
 import scrollBar from 'perfect-scrollbar'
-// import scrollBar from 'psScrollbar'
+
 export default {
   props: {
     settings: {
       default: undefined
-    }
+    },
   },
   methods: {
     scrollHanle(evt) {
       this.$emit(evt.type, evt)
-    },update(){
-        let container = this.$refs.container;
-        scrollBar.update(container)
-      }
+    },
+    update() {
+      let container = this.$refs.container;
+      scrollBar.update(container)
+    },
   },
   mounted() {
     let container = this.$refs.container
