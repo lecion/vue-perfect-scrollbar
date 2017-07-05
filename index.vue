@@ -5,6 +5,9 @@
 </template>
 <style lang="scss">
 @import '~perfect-scrollbar/src/css/main.scss';
+.ps-container {
+  position: relative;
+}
 </style>
 <script>
 import scrollBar from 'perfect-scrollbar'
