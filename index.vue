@@ -13,6 +13,7 @@
 import scrollBar from 'perfect-scrollbar'
 
 export default {
+  name:'vue-perfect-scrollbar',
   props: {
     settings: {
       default: undefined

@@ -1,11 +1,12 @@
 {
   "name": "vue-perfect-scrollbar",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build-webpack.conf.js",
-    "example": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot --config example-webpack.conf.js"
+    "example": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot --config example-webpack.conf.js",
+    "example:vuerouter": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot --config example-vuerouter-webpack.conf.js"
   },
   "repository": {
     "type": "git",
@@ -41,8 +42,9 @@
     "sass-loader": "^4.1.1",
     "scss-loader": "0.0.1",
     "style-loader": "^0.13.1",
-    "vue": "^2.3.3",
+    "vue": "^2.4.2",
     "vue-loader": "^10.3.0",
+    "vue-router": "^2.7.0",
     "vue-style-loader": "^1.0.0",
     "vue-template-compiler": "^2.3.3",
     "webpack": "^2.5.1",
