@@ -10,6 +10,8 @@ npm install vue-perfect-scrollbar
 
 ## 2. example
 
+### 2.1 base example
+
 ```html
 <template>
   <VuePerfectScrollbar class="scroll-area" v-once :settings="settings" @ps-scroll-y="scrollHanle">
@@ -57,6 +59,13 @@ git clone git@github.com:Degfy/vue-perfect-scrollbar.git
 cd vue-perfect-scrollbar
 npm install
 npm run example
+```
+### 2.2 example with vuerouter
+```shell
+git clone git@github.com:Degfy/vue-perfect-scrollbar.git
+cd vue-perfect-scrollbar
+npm install
+npm run example:vuerouter
 ```
 
 ## 3. props
