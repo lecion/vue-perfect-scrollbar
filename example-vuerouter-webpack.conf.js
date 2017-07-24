@@ -12,7 +12,7 @@ module.exports = Object.assign({
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.common.js',
-      // 'vue-perfect-scrollbar$':path.join(__dirname, 'dist/index.js'),
+      'vue-perfect-scrollbar$':path.join(__dirname, './index.js'),
     }
   },
   devServer: {

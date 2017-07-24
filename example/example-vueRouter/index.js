@@ -10,6 +10,7 @@ const router = new VueRouter({
   routes: [{
     name: 'root',
     path: '/',
+    redirect: '/random',
     component: Panel,
     children: [{
       name: 'random-list',
