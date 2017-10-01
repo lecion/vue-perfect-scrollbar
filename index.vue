@@ -14,7 +14,7 @@
     <slot></slot>
   </section>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
 @import '~perfect-scrollbar/src/css/main.scss';
 .ps-container {
   position: relative;
@@ -45,13 +45,13 @@ export default {
 
     __init() {
       if (this.swicher) {
-        if (this._ps_inited) {
+        if (!this._ps_inited) {
           this._ps_inited = true
           scrollBar.initialize(this.$el, this.settings)
         } else {
           this.update(this.$el)
         }
-      },
+      }
     },
 
     __uninit() {
@@ -77,6 +77,7 @@ export default {
   },
 
   mounted() {
+    // debugger
     this.__init()
   },
 

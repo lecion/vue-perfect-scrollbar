@@ -5,6 +5,7 @@ Vue.use(VueRouter)
 
 import Panel from './panel.vue'
 import RandomList from './random-list.vue'
+import MySite from './mysite.vue'
 
 const router = new VueRouter({
   routes: [{
@@ -16,6 +17,10 @@ const router = new VueRouter({
       name: 'random-list',
       path: 'random',
       component: RandomList,
+    }, {
+      name: 'my site name',
+      path: 'mysite',
+      component: MySite,
     }],
 
   }],

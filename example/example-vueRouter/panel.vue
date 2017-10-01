@@ -1,8 +1,13 @@
 <template>
   <div class="panel">
-    <h2>this is panel header</h2>
+    <h2>
+      <router-link to="/mysite">mysite list</router-link>
+      <router-link to="/random">random list</router-link>
+    </h2>
     <VuePerfectScrollbar class="scroll-area">
-      <router-view></router-view>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </VuePerfectScrollbar>
   </div>
 </template>
@@ -20,12 +25,15 @@ export default {
 }
 </script>
 <style lang="scss">
-#app{
+#app {}
 
-}
 .scroll-area {
   width: 800px;
   height: 600px;
   background: #f9f9f9;
+}
+
+.router-link-active {
+  color: red;
 }
 </style>

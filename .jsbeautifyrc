@@ -7,7 +7,7 @@
 
     "html":
     {
-        "wrap_attributes": "force",
+        "wrap_attributes": "auto",
         "unformatted": ["img", "code", "pre", "sub", "sup", "em", "strong", "b", "i", "u", "strike", "big", "small", "pre"],
     },
 }
