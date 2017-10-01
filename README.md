@@ -70,8 +70,8 @@ npm run example:vuerouter
 
 ## 3. props
 
-settings:please refer to [optional-parameters of perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar#optional-parameters)
-swicher:which you could use to turn off the scrollbar for mobile or other case
+### settings:please refer to [optional-parameters of perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar#optional-parameters)
+### swicher:which you could use to turn off the scrollbar for mobile or other case
 
 
 ## 4. events
