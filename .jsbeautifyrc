@@ -1,0 +1,13 @@
+{
+    "all":
+    {
+        "indent_size": 2
+    },
+
+
+    "html":
+    {
+        "wrap_attributes": "force",
+        "unformatted": ["img", "code", "pre", "sub", "sup", "em", "strong", "b", "i", "u", "strike", "big", "small", "pre"],
+    },
+}

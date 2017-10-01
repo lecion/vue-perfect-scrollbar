@@ -1,9 +1,20 @@
 <template>
-  <section class="ps-container" ref="container" @ps-scroll-y="scrollHanle" @ps-scroll-x="scrollHanle" @ps-scroll-up="scrollHanle" @ps-scroll-down="scrollHanle" @ps-scroll-left="scrollHanle" @ps-scroll-right="scrollHanle" @ps-y-reach-start="scrollHanle" @ps-y-reach-end="scrollHanle" @ps-x-reach-start="scrollHanle" @ps-x-reach-end="scrollHanle">
+  <section class="ps-container"
+    @mouseover.once="update"
+    @ps-scroll-y="scrollHanle"
+    @ps-scroll-x="scrollHanle"
+    @ps-scroll-up="scrollHanle"
+    @ps-scroll-down="scrollHanle"
+    @ps-scroll-left="scrollHanle"
+    @ps-scroll-right="scrollHanle"
+    @ps-y-reach-start="scrollHanle"
+    @ps-y-reach-end="scrollHanle"
+    @ps-x-reach-start="scrollHanle"
+    @ps-x-reach-end="scrollHanle">
     <slot></slot>
   </section>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~perfect-scrollbar/src/css/main.scss';
 .ps-container {
   position: relative;
@@ -13,38 +24,76 @@
 import scrollBar from 'perfect-scrollbar'
 
 export default {
-  name:'vue-perfect-scrollbar',
+  name: 'vue-perfect-scrollbar',
   props: {
     settings: {
       default: undefined
+    },
+    swicher: {
+      type: Boolean,
+      default: true,
     },
   },
   methods: {
     scrollHanle(evt) {
       this.$emit(evt.type, evt)
     },
+
     update() {
-      let container = this.$refs.container;
-      scrollBar.update(container)
+      scrollBar.update(this.$el)
+    },
+
+    __init() {
+      if (this.swicher) {
+        if (this._ps_inited) {
+          this._ps_inited = true
+          scrollBar.initialize(this.$el, this.settings)
+        } else {
+          this.update(this.$el)
+        }
+      },
+    },
+
+    __uninit() {
+      scrollBar.destroy(this.$el)
+      this._ps_inited = false
     },
   },
-  mounted() {
-    let container = this.$refs.container
-    this.width = container.offsetWidth
-    this.height = container.offsetHeight
-    scrollBar.initialize(container, this.settings)
-  },
-  beforeDestroy() {
-    scrollBar.destroy(this.$refs.container)
-  },
-  updated() {
-    let container = this.$refs.container,
-      width = container.offsetWidth,
-      height = container.offsetHeight
 
-    if (width != this.width || height != this.width) {
-      scrollBar.update(container)
-    }
-  }
+  watch: {
+    swicher(val) {
+      if (val && !this._ps_inited) {
+        this.init()
+      }
+      if (!val && this._ps_inited) {
+        this.uninit()
+      }
+    },
+
+    $route() {
+      this.update()
+    },
+
+  },
+
+  mounted() {
+    this.__init()
+  },
+
+  updated() {
+    this.$nextTick(this.update)
+  },
+
+  activated() {
+    this.__init()
+  },
+
+  deactivated() {
+    this.__uninit()
+  },
+
+  beforeDestroy() {
+    this.__uninit()
+  },
 }
 </script>
