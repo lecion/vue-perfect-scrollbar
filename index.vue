@@ -63,10 +63,10 @@ export default {
   watch: {
     swicher(val) {
       if (val && !this._ps_inited) {
-        this.init()
+        this.__init()
       }
       if (!val && this._ps_inited) {
-        this.uninit()
+        this.__uninit()
       }
     },
 
