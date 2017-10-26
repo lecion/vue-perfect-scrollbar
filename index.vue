@@ -44,7 +44,7 @@
 			},
 
 			destroy() {
-				console.log(scrollBar);
+				// console.log(scrollBar);
 				scrollBar.destroy(this.$el)
 			},
 
