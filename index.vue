@@ -1,100 +1,113 @@
 <template>
-  <section class="ps-container"
-    @mouseover.once="update"
-    @ps-scroll-y="scrollHanle"
-    @ps-scroll-x="scrollHanle"
-    @ps-scroll-up="scrollHanle"
-    @ps-scroll-down="scrollHanle"
-    @ps-scroll-left="scrollHanle"
-    @ps-scroll-right="scrollHanle"
-    @ps-y-reach-start="scrollHanle"
-    @ps-y-reach-end="scrollHanle"
-    @ps-x-reach-start="scrollHanle"
-    @ps-x-reach-end="scrollHanle">
-    <slot></slot>
-  </section>
+
+	<section 
+		class="ps-container"
+		@mouseover.once="update"
+		@ps-scroll-y="scrollHanle"
+		@ps-scroll-x="scrollHanle"
+		@ps-scroll-up="scrollHanle"
+		@ps-scroll-down="scrollHanle"
+		@ps-scroll-left="scrollHanle"
+		@ps-scroll-right="scrollHanle"
+		@ps-y-reach-start="scrollHanle"
+		@ps-y-reach-end="scrollHanle"
+		@ps-x-reach-start="scrollHanle"
+		@ps-x-reach-end="scrollHanle"
+	>
+		<slot></slot>
+	</section>
+
 </template>
-<style lang="scss">
-@import '~perfect-scrollbar/src/css/main.scss';
-.ps-container {
-  position: relative;
-}
-</style>
+
+
 <script>
-import scrollBar from 'perfect-scrollbar'
+	import scrollBar from 'perfect-scrollbar'
 
-export default {
-  name: 'vue-perfect-scrollbar',
-  props: {
-    settings: {
-      default: undefined
-    },
-    swicher: {
-      type: Boolean,
-      default: true,
-    },
-  },
-  methods: {
-    scrollHanle(evt) {
-      this.$emit(evt.type, evt)
-    },
+	export default {
+		name: 'vue-perfect-scrollbar',
+		props: {
+			settings: {
+				default: undefined
+			},
+			swicher: {
+				type: Boolean,
+				default: true,
+			},
+		},
+		methods: {
+			scrollHanle(evt) {
+				this.$emit(evt.type, evt)
+			},
 
-    update() {
-      scrollBar.update(this.$el)
-    },
+			update() {
+				scrollBar.update(this.$el)
+			},
 
-    __init() {
-      if (this.swicher) {
-        if (!this._ps_inited) {
-          this._ps_inited = true
-          scrollBar.initialize(this.$el, this.settings)
-        } else {
-          this.update(this.$el)
-        }
-      }
-    },
+			destroy() {
+				// console.log(scrollBar);
+				scrollBar.destroy(this.$el)
+			},
 
-    __uninit() {
-      scrollBar.destroy(this.$el)
-      this._ps_inited = false
-    },
-  },
+			__init() {
+				if (this.swicher) {
+					if (!this._ps_inited) {
+						this._ps_inited = true
+						scrollBar.initialize(this.$el, this.settings)
+					} else {
+						this.update(this.$el)
+					}
+				}
+			},
 
-  watch: {
-    swicher(val) {
-      if (val && !this._ps_inited) {
-        this.__init()
-      }
-      if (!val && this._ps_inited) {
-        this.__uninit()
-      }
-    },
+			__uninit() {
+				scrollBar.destroy(this.$el)
+				this._ps_inited = false
+			},
+		},
 
-    $route() {
-      this.update()
-    },
+		watch: {
+			swicher(val) {
+				if (val && !this._ps_inited) {
+					this.__init()
+				}
+				if (!val && this._ps_inited) {
+					this.__uninit()
+				}
+			},
 
-  },
+			$route() {
+				this.update()
+			},
 
-  mounted() {
-    // debugger
-    this.__init()
-  },
+		},
 
-  updated() {
-    this.$nextTick(this.update)
-  },
+		mounted() {
+			// debugger
+			this.__init()
+		},
 
-  activated() {
-    this.__init()
-  },
+		updated() {
+			this.$nextTick(this.update)
+		},
 
-  deactivated() {
-    this.__uninit()
-  },
+		activated() {
+			this.__init()
+		},
 
-  beforeDestroy() {
-    this.__uninit()
-  },
-}
+		deactivated() {
+			this.__uninit()
+		},
+
+		beforeDestroy() {
+			this.__uninit()
+		},
+	}
 </script>
+
+<style lang="scss">
+	@import '~perfect-scrollbar/src/css/main.scss';
+
+	.ps-container {
+		position: relative;
+	}
+</style>
