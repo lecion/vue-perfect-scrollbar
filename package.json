@@ -1,0 +1,39 @@
+{
+  "name": "vue-perfect-scrollbar",
+  "version": "1.0.0",
+  "description": "perfect-scrollbar in vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Degfy/vue-perfect-scrollbar.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Degfy/vue-perfect-scrollbar/issues"
+  },
+  "homepage": "https://github.com/Degfy/vue-perfect-scrollbar#readme",
+  "keywords": [
+    "scroll",
+    "scrollbar",
+    "perfect-scroll",
+    "vue-perfect-scroll",
+    "vue-scroll",
+    "vue-scrollbar",
+    "vue-plugin",
+    "frontend",
+    "滚动条"
+  ],
+  "dependencies": {
+    "css-loader": "^0.28.8",
+    "perfect-scrollbar": "^1.3.0",
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "vue-loader": "^13.7.0",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0"
+  }
+}
