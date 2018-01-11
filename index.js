@@ -1,11 +1,6 @@
-<template>
-  <div class="v-ps" @mouseover.once="update" @ps-scroll-y="scrollHanle" @ps-scroll-x="scrollHanle" @ps-scroll-up="scrollHanle" @ps-scroll-down="scrollHanle" @ps-scroll-left="scrollHanle" @ps-scroll-right="scrollHanle" @ps-y-reach-start="scrollHanle" @ps-y-reach-end="scrollHanle" @ps-x-reach-start="scrollHanle" @ps-x-reach-end="scrollHanle">
-    <slot></slot>
-  </div>
-</template>
-<script>
-import PerfectScrollbar from 'perfect-scrollbar'
 import 'perfect-scrollbar/css/perfect-scrollbar.css'
+import './index.css'
+import PerfectScrollbar from 'perfect-scrollbar'
 
 export default {
   name: 'vue-perfect-scrollbar',
@@ -16,10 +11,16 @@ export default {
         return {}
       },
     },
+    
     swicher: {
       type: Boolean,
       default: true,
     },
+
+    tag: {
+      type: String,
+      default: 'div',
+    }
   },
 
   methods: {
@@ -55,7 +56,7 @@ export default {
       ps-x-reach-start
       ps-x-reach-end
      */
-    scrollHanle(evt) {
+    __evt_handle(evt) {
       this.$emit(evt.type, evt)
     },
 
@@ -85,10 +86,31 @@ export default {
   beforeDestroy() {
     this.__uninit()
   },
+
+  render(createElement, context) {
+
+    const data = {
+      class: {
+        'v-p-s': true,
+      },
+      on: {
+        'ps-scroll-y': this.__evt_handle,
+        'ps-scroll-x': this.__evt_handle,
+        'ps-scroll-up': this.__evt_handle,
+        'ps-scroll-down': this.__evt_handle,
+        'ps-scroll-left': this.__evt_handle,
+        'ps-scroll-right': this.__evt_handle,
+        'ps-y-reach-start': this.__evt_handle,
+        'ps-y-reach-end': this.__evt_handle,
+        'ps-x-reach-start': this.__evt_handle,
+        'ps-x-reach-end': this.__evt_handle,
+      },
+    }
+
+    return createElement(
+      this.tag,
+      data,
+      this.$slots.default
+    )
+  },
 }
-</script>
-<style>
-.v-ps {
-  position: relative;
-}
-</style>
