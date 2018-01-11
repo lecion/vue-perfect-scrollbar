@@ -2,7 +2,7 @@
   "name": "vue-perfect-scrollbar",
   "version": "1.0.0",
   "description": "perfect-scrollbar in vue",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"

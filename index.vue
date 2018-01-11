@@ -22,7 +22,9 @@ export default {
   props: {
     settings: {
       type: Object,
-      default: {},
+      default(){
+        return {}
+      },
     },
     swicher: {
       type: Boolean,
@@ -97,7 +99,7 @@ export default {
 </script>
 <style>
 @import url('~perfect-scrollbar/css/perfect-scrollbar.css');
-#v-ps {
+.v-ps {
   position: relative;
 }
 </style>

@@ -8,7 +8,8 @@ module.exports = {
     path: resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: 'index.js',
-    libraryTarget: "commonjs-module",
+    libraryTarget: "umd",
+    // libraryTarget: "commonjs-module",
   },
 
   performance: {
