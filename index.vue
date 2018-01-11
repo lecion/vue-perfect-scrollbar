@@ -1,28 +1,18 @@
 <template>
-  <div class="v-ps" 
-    @mouseover.once="update" 
-    @ps-scroll-y="scrollHanle" 
-    @ps-scroll-x="scrollHanle" 
-    @ps-scroll-up="scrollHanle" 
-    @ps-scroll-down="scrollHanle" 
-    @ps-scroll-left="scrollHanle" 
-    @ps-scroll-right="scrollHanle" 
-    @ps-y-reach-start="scrollHanle" 
-    @ps-y-reach-end="scrollHanle" 
-    @ps-x-reach-start="scrollHanle" 
-    @ps-x-reach-end="scrollHanle">
+  <div class="v-ps" @mouseover.once="update" @ps-scroll-y="scrollHanle" @ps-scroll-x="scrollHanle" @ps-scroll-up="scrollHanle" @ps-scroll-down="scrollHanle" @ps-scroll-left="scrollHanle" @ps-scroll-right="scrollHanle" @ps-y-reach-start="scrollHanle" @ps-y-reach-end="scrollHanle" @ps-x-reach-start="scrollHanle" @ps-x-reach-end="scrollHanle">
     <slot></slot>
   </div>
 </template>
 <script>
 import PerfectScrollbar from 'perfect-scrollbar'
+import 'perfect-scrollbar/css/perfect-scrollbar.css'
 
 export default {
   name: 'vue-perfect-scrollbar',
   props: {
     settings: {
       type: Object,
-      default(){
+      default () {
         return {}
       },
     },
@@ -98,7 +88,6 @@ export default {
 }
 </script>
 <style>
-@import url('~perfect-scrollbar/css/perfect-scrollbar.css');
 .v-ps {
   position: relative;
 }
