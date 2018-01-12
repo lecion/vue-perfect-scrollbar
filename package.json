@@ -2,7 +2,7 @@
   "name": "vue-perfect-scrollbar",
   "version": "1.0.0",
   "description": "perfect-scrollbar in vue",
-  "main": "index.js",
+  "main": "dist/vps.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
@@ -28,7 +28,10 @@
     "frontend",
     "滚动条"
   ],
-  "dependencies": {
-    "perfect-scrollbar": "^1.3.0"
+  "devDependencies": {
+    "css-loader": "^0.28.8",
+    "perfect-scrollbar": "^1.3.0",
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "webpack": "^3.10.0"
   }
 }
