@@ -8,7 +8,9 @@
   </div>
 </template>
 <script>
-import Ps from 'vue-perfect-scrollbar'
+// import Ps from 'vue-perfect-scrollbar'
+import Ps from '../../../dist/vps.min.js'
+
 
 export default {
   components: {
@@ -29,6 +31,7 @@ export default {
       console.log(evt)
     }
   },
+  
 }
 </script>
 <style>

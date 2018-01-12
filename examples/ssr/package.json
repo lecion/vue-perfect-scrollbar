@@ -10,6 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "nuxt": "^1.0.0",
-    "vue-perfect-scrollbar":"https://github.com/Degfy/vue-perfect-scrollbar/archive/1.x-for-test4.tar.gz"
+    "vue-perfect-scrollbar":"https://github.com/Degfy/vue-perfect-scrollbar/archive/1.0.0-rc1.tar.gz"
   }
 }

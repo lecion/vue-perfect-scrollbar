@@ -3804,10 +3804,6 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-perfect-scrollbar@^1.3.0:
-  version "1.3.0"
-  resolved "http://registry.npm.taobao.org/perfect-scrollbar/download/perfect-scrollbar-1.3.0.tgz#61da56f94b58870d8e0a617bce649cee17d1e3b2"
-
 performance-now@^0.2.0:
   version "0.2.0"
   resolved "http://registry.npm.taobao.org/performance-now/download/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
@@ -5590,11 +5586,9 @@ vue-meta@^1.4.2:
     lodash.isplainobject "^4.0.6"
     object-assign "^4.1.1"
 
-"vue-perfect-scrollbar@https://github.com/Degfy/vue-perfect-scrollbar/archive/1.x-for-test4.tar.gz":
+"vue-perfect-scrollbar@https://github.com/Degfy/vue-perfect-scrollbar/archive/1.0.0-rc1.tar.gz":
   version "1.0.0"
-  resolved "https://github.com/Degfy/vue-perfect-scrollbar/archive/1.x-for-test4.tar.gz#53232ec3999992088af484b1de67e018bc3a3605"
-  dependencies:
-    perfect-scrollbar "^1.3.0"
+  resolved "https://github.com/Degfy/vue-perfect-scrollbar/archive/1.0.0-rc1.tar.gz#16b2c25b857057be7fe5d74f580b12cf9738daf9"
 
 vue-router@^3.0.1:
   version "3.0.1"
