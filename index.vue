@@ -35,6 +35,7 @@ export default {
       default: true,
     },
     tagname: {
+      type: String,
       default: "section"
     }
   },
