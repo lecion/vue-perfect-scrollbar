@@ -1,5 +1,6 @@
 <template>
   <section class="ps-container"
+    :is="$props.tagname"
     @mouseover.once="update"
     @ps-scroll-y="scrollHanle"
     @ps-scroll-x="scrollHanle"
@@ -33,6 +34,9 @@ export default {
       type: Boolean,
       default: true,
     },
+    tagname: {
+      default: "section"
+    }
   },
   methods: {
     scrollHanle(evt) {
