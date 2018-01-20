@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <VuePerfectScrollbar ref="ps" class="scroll-area" :settings="settings" @ps-scroll-y="scrollHanle">
+    <VuePerfectScrollbar ref="ps" class="scroll-area" :settings="settings" @ps-scroll-y="scrollHanle" tagname="div">
       <!-- <img src="./assets/azusa.jpg" width="1280" height="720" :class="{bigger:sizeChange}"> -->
       <img ref="imgnode" src="./assets/azusa.jpg" width="1280" height="720">
     </VuePerfectScrollbar>
