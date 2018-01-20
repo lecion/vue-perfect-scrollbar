@@ -1,17 +1,5 @@
 <template>
-  <section class="ps-container"
-    :is="$props.tagname"
-    @mouseover.once="update"
-    @ps-scroll-y="scrollHanle"
-    @ps-scroll-x="scrollHanle"
-    @ps-scroll-up="scrollHanle"
-    @ps-scroll-down="scrollHanle"
-    @ps-scroll-left="scrollHanle"
-    @ps-scroll-right="scrollHanle"
-    @ps-y-reach-start="scrollHanle"
-    @ps-y-reach-end="scrollHanle"
-    @ps-x-reach-start="scrollHanle"
-    @ps-x-reach-end="scrollHanle">
+  <section class="ps-container" :is="$props.tagname" @mouseover.once="update" @ps-scroll-y="scrollHanle" @ps-scroll-x="scrollHanle" @ps-scroll-up="scrollHanle" @ps-scroll-down="scrollHanle" @ps-scroll-left="scrollHanle" @ps-scroll-right="scrollHanle" @ps-y-reach-start="scrollHanle" @ps-y-reach-end="scrollHanle" @ps-x-reach-start="scrollHanle" @ps-x-reach-end="scrollHanle">
     <slot></slot>
   </section>
 </template>
@@ -82,8 +70,10 @@ export default {
   },
 
   mounted() {
-    // debugger
-    this.__init()
+    // for support ssr
+    if (!this.$isServer) {
+      this.__init()
+    }
   },
 
   updated() {
