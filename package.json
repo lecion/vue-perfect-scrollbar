@@ -1,6 +1,6 @@
 {
   "name": "vue-perfect-scrollbar",
-  "version": "0.0.14",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
