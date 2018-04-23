@@ -71,7 +71,7 @@ export default {
 
   mounted() {
     // for support ssr
-    if (!this.$isServer) {
+    if (!process || !process.server) {
       this.__init()
     }
   },
