@@ -4,7 +4,7 @@
   </section>
 </template>
 <style lang="scss">
-@import '~perfect-scrollbar/src/css/main.scss';
+@import 'perfect-scrollbar/css/perfect-scrollbar.css';
 .ps-container {
   position: relative;
 }
@@ -27,20 +27,26 @@ export default {
       default: "section"
     }
   },
+  data(){
+    return {
+      scrollBar: undefined,
+      _ps_inited: false
+    }
+  },
   methods: {
     scrollHanle(evt) {
       this.$emit(evt.type, evt)
     },
 
     update() {
-      scrollBar.update(this.$el)
+     this.scrollBar.update(this.$el)
     },
 
     __init() {
       if (this.swicher) {
         if (!this._ps_inited) {
           this._ps_inited = true
-          scrollBar.initialize(this.$el, this.settings)
+          this.scrollBar = new scrollBar(this.$el, this.settings)
         } else {
           this.update(this.$el)
         }
@@ -48,7 +54,7 @@ export default {
     },
 
     __uninit() {
-      scrollBar.destroy(this.$el)
+      this.scrollBar.destroy(this.$el)
       this._ps_inited = false
     },
   },
@@ -64,7 +70,8 @@ export default {
     },
 
     $route() {
-      this.update()
+      this.update();
+      this.$el.scrollTop = 0;
     },
 
   },
