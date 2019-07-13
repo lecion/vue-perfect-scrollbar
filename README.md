@@ -14,7 +14,7 @@ npm install vue-perfect-scrollbar
 
 ```html
 <template>
-  <VuePerfectScrollbar class="scroll-area" v-once :settings="settings" @ps-scroll-y="scrollHanle">
+  <VuePerfectScrollbar class="scroll-area" v-once :settings="settings" @ps-scroll-y="scrollHandle">
     <img src="./assets/azusa.jpg" height="720" width="1280" alt="">
   </VuePerfectScrollbar>
 </template>
@@ -35,7 +35,7 @@ export default {
     }
   },
   methods: {
-    scrollHanle(evt) {
+    scrollHandle(evt) {
       console.log(evt)
     }
   }
