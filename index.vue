@@ -1,5 +1,5 @@
 <template>
-  <section class="ps-container" :is="$props.tagname" @mouseover.once="update" @ps-scroll-y="scrollHanle" @ps-scroll-x="scrollHanle" @ps-scroll-up="scrollHanle" @ps-scroll-down="scrollHanle" @ps-scroll-left="scrollHanle" @ps-scroll-right="scrollHanle" @ps-y-reach-start="scrollHanle" @ps-y-reach-end="scrollHanle" @ps-x-reach-start="scrollHanle" @ps-x-reach-end="scrollHanle">
+  <section class="ps-container" :is="$props.tagname" @mouseover.once="update" @ps-scroll-y="scrollHandle" @ps-scroll-x="scrollHandle" @ps-scroll-up="scrollHandle" @ps-scroll-down="scrollHandle" @ps-scroll-left="scrollHandle" @ps-scroll-right="scrollHandle" @ps-y-reach-start="scrollHandle" @ps-y-reach-end="scrollHandle" @ps-x-reach-start="scrollHandle" @ps-x-reach-end="scrollHandle">
     <slot></slot>
   </section>
 </template>
@@ -28,7 +28,7 @@ export default {
     }
   },
   methods: {
-    scrollHanle(evt) {
+    scrollHandle(evt) {
       this.$emit(evt.type, evt)
     },
 
