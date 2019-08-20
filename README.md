@@ -55,14 +55,14 @@ export default {
 Also,you can clone this repository to run the example:
 
 ```shell
-git clone git@github.com:Degfy/vue-perfect-scrollbar.git
+git clone git@github.com:lecion/vue-perfect-scrollbar.git
 cd vue-perfect-scrollbar
 npm install
 npm run example
 ```
 ### 2.2 example with vuerouter
 ```shell
-git clone git@github.com:Degfy/vue-perfect-scrollbar.git
+git clone git@github.com:lecion/vue-perfect-scrollbar.git
 cd vue-perfect-scrollbar
 npm install
 npm run example:vuerouter
