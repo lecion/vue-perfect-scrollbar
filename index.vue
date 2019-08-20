@@ -1,95 +1,81 @@
 <template>
-  <section class="ps-container" :is="$props.tagname" @mouseover.once="update" @ps-scroll-y="scrollHandle" @ps-scroll-x="scrollHandle" @ps-scroll-up="scrollHandle" @ps-scroll-down="scrollHandle" @ps-scroll-left="scrollHandle" @ps-scroll-right="scrollHandle" @ps-y-reach-start="scrollHandle" @ps-y-reach-end="scrollHandle" @ps-x-reach-start="scrollHandle" @ps-x-reach-end="scrollHandle">
-    <slot></slot>
-  </section>
+    <section class="ps-container" :is="$props.tagname" @mouseover.once="update" v-on="$listeners">
+        <slot></slot>
+    </section>
 </template>
 <style lang="scss">
-@import '~perfect-scrollbar/src/css/main.scss';
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
 .ps-container {
-  position: relative;
+    position: relative;
 }
 </style>
 <script>
-import scrollBar from 'perfect-scrollbar'
+import PerfectScrollbar from "perfect-scrollbar";
 
 export default {
-  name: 'vue-perfect-scrollbar',
-  props: {
-    settings: {
-      default: undefined
-    },
-    swicher: {
-      type: Boolean,
-      default: true,
-    },
-    tagname: {
-      type: String,
-      default: "section"
-    }
-  },
-  methods: {
-    scrollHandle(evt) {
-      this.$emit(evt.type, evt)
-    },
-
-    update() {
-      scrollBar.update(this.$el)
-    },
-
-    __init() {
-      if (this.swicher) {
-        if (!this._ps_inited) {
-          this._ps_inited = true
-          scrollBar.initialize(this.$el, this.settings)
-        } else {
-          this.update(this.$el)
+    name: "vue-perfect-scrollbar",
+    props: {
+        settings: {
+            default: undefined
+        },
+        tagname: {
+            type: String,
+            default: "section"
         }
-      }
+    },
+    data() {
+        return {
+            ps: null
+        };
+    },
+    methods: {
+        update() {
+            if (!this.ps) {
+                this.ps.update();
+            }
+        },
+
+        __init() {
+            if (!this.ps) {
+                this.ps = new PerfectScrollbar(this.$el, this.settings);
+            }
+        },
+
+        __uninit() {
+            if (this.ps) {
+                this.ps.destroy();
+                this.ps = null;
+            }
+        }
     },
 
-    __uninit() {
-      scrollBar.destroy(this.$el)
-      this._ps_inited = false
-    },
-  },
-
-  watch: {
-    swicher(val) {
-      if (val && !this._ps_inited) {
-        this.__init()
-      }
-      if (!val && this._ps_inited) {
-        this.__uninit()
-      }
+    watch: {
+        $route() {
+            this.update();
+        }
     },
 
-    $route() {
-      this.update()
+    mounted() {
+        // for support ssr
+        if (!this.$isServer) {
+            this.__init();
+        }
     },
 
-  },
+    updated() {
+        this.$nextTick(this.update);
+    },
 
-  mounted() {
-    // for support ssr
-    if (!this.$isServer) {
-      this.__init()
+    activated() {
+        this.__init();
+    },
+
+    deactivated() {
+        this.__uninit();
+    },
+
+    beforeDestroy() {
+        this.__uninit();
     }
-  },
-
-  updated() {
-    this.$nextTick(this.update)
-  },
-
-  activated() {
-    this.__init()
-  },
-
-  deactivated() {
-    this.__uninit()
-  },
-
-  beforeDestroy() {
-    this.__uninit()
-  },
-}
+};
 </script>
