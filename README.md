@@ -81,6 +81,7 @@ you can do it like this:
 
 ### install
 ```shell
+npm install sass-loader node-sass --save-dev
 npm install vue-perfect-scrollbar perfect-scrollbar --save
 ```
 
