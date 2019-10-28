@@ -30,7 +30,7 @@ export default {
     },
     methods: {
         update() {
-            if (!this.ps) {
+            if (this.ps) {
                 this.ps.update();
             }
         },
